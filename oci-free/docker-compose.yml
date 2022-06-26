@@ -1,0 +1,16 @@
+services:
+  oci-free:
+    build: .
+    container_name: oci-free
+    volumes:
+      - ./data:/data
+      - ~/.oci:/root/.oci
+      - ~/.ssh:/root/.ssh
+    environment:
+      - SLEEP=10
+    networks:
+      - local
+networks:
+  local:
+    external: true
+  

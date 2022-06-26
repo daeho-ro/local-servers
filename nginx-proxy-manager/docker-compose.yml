@@ -10,6 +10,7 @@ services:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
     restart: unless-stopped
+    pull_policy: always
     networks:
       - local
 networks:

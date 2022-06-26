@@ -7,3 +7,12 @@ docker network create --driver bridge local
 ```
 docker compose up -d
 ```
+
+# Services
+개별 서비스에 대한 설명이 필요한 경우에는 하위 폴더에 README 파일을 제공하므로 이를 참조하시면 됩니다.
+
+- Archi Steam Farm (asf)
+- JupyterLab with Spark kernel (jupyter-spark)
+- Nginx Proxy Manager (nginx-proxy-manager)
+- OCI Free ARM Inatance Trial Creator (oci-free)
+- Uptime Kuma (uptime-kuma)

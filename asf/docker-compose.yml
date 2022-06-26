@@ -1,11 +1,11 @@
 services:
-  kuma:
-    image: louislam/uptime-kuma:latest
-    container_name: uptime-kuma
+  asf:
+    image: justarchi/archisteamfarm:latest
+    container_name: asf
     ports:
-      - 3001:3001
+      - 1242:1242
     volumes:
-      - ./data:/app/data
+      - ./config:/app/config
     restart: unless-stopped
     pull_policy: always
     networks:
