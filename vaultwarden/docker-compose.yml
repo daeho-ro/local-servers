@@ -1,0 +1,15 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vault
+    ports:
+      - 80:80
+    volumes:
+      - ./data:/vw-data
+    restart: unless-stopped
+    pull_policy: always
+    networks:
+      - local
+networks:
+  local:
+    external: true
