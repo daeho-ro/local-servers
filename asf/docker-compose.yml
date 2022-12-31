@@ -2,14 +2,13 @@ services:
   asf:
     image: justarchi/archisteamfarm:latest
     container_name: asf
-    ports:
-      - 1242:1242
     volumes:
       - ./config:/app/config
     restart: unless-stopped
     pull_policy: always
     networks:
       - local
+
 networks:
   local:
     external: true

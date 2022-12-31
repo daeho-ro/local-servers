@@ -13,6 +13,7 @@ services:
     pull_policy: always
     networks:
       - local
+
 networks:
   local:
     external: true
