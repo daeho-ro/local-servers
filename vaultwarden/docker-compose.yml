@@ -3,13 +3,14 @@ services:
     image: vaultwarden/server:latest
     container_name: vault
     volumes:
-      - /data:/vw-data
+      - ./data:/data
     restart: unless-stopped
     pull_policy: always
     networks:
       - local
     environment:
       I_REALLY_WANT_VOLATILE_STORAGE: true
+      SIGNUPS_ALLOWED: false
 
 networks:
   local:
