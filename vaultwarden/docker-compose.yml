@@ -2,10 +2,10 @@ services:
   vaultwarden:
     image: vaultwarden/server:latest
     container_name: vault
-    volumes:
-      - ./data:/data
     restart: unless-stopped
     pull_policy: always
+    volumes:
+      - ./data:/data
     networks:
       - local
     environment:

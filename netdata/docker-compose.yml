@@ -4,6 +4,7 @@ services:
     container_name: netdata
     hostname: monitor.home.lamanus.kr
     restart: unless-stopped
+    pull_policy: always
     cap_add:
       - SYS_PTRACE
     security_opt:

@@ -3,17 +3,15 @@ services:
     image: jupyter/all-spark-notebook:aarch64-latest
     container_name: jupyter
     user: root
-    ports:
-      - 8888:8888
+    restart: unless-stopped
+    pull_policy: always
     volumes:
       - ./data:/home/jovyan/work
       - ~/.aws:/home/jovyan/.aws
-    environment:
-      - JUPYTER_ENABLE_LAB=yes
-    restart: unless-stopped
-    pull_policy: always
     networks:
       - local
+    environment:
+      JUPYTER_ENABLE_LAB: yes
 
 networks:
   local:

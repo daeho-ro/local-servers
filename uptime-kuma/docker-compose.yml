@@ -2,10 +2,10 @@ services:
   kuma:
     image: louislam/uptime-kuma:latest
     container_name: uptime-kuma
-    volumes:
-      - ./data:/app/data
     restart: unless-stopped
     pull_policy: always
+    volumes:
+      - ./data:/app/data
     networks:
       - local
 

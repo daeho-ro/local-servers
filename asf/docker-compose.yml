@@ -2,10 +2,10 @@ services:
   asf:
     image: justarchi/archisteamfarm:latest
     container_name: asf
-    volumes:
-      - ./config:/app/config
     restart: unless-stopped
     pull_policy: always
+    volumes:
+      - ./config:/app/config
     networks:
       - local
 
