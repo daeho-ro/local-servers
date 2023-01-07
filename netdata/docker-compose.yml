@@ -10,9 +10,9 @@ services:
     security_opt:
       - apparmor:unconfined
     volumes:
-      - ./netdataconfig:/etc/netdata
-      - ./netdatalib:/var/lib/netdata
-      - ./netdatacache:/var/cache/netdata
+      - config:/etc/netdata
+      - lib:/var/lib/netdata
+      - cache:/var/cache/netdata
       - /etc/passwd:/host/etc/passwd:ro
       - /etc/group:/host/etc/group:ro
       - /proc:/host/proc:ro
@@ -21,6 +21,11 @@ services:
       - /etc/os-release:/host/etc/os-release:ro
     networks:
       - local
+
+volumes:
+  config:
+  lib:
+  cache:
 
 networks:
   local:

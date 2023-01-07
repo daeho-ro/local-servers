@@ -5,12 +5,15 @@ services:
     restart: unless-stopped
     pull_policy: always
     volumes:
-      - ./data:/data
+      - data:/data
     networks:
       - local
     environment:
       I_REALLY_WANT_VOLATILE_STORAGE: true
       SIGNUPS_ALLOWED: false
+
+volumes:
+  data:
 
 networks:
   local:

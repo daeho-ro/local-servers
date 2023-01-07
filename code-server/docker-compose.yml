@@ -1,0 +1,21 @@
+services:
+  code-serverr:
+    image: codercom/code-server:latest
+    container_name: code-server
+    restart: unless-stopped
+    pull_policy: always
+    user: 1001:1001
+    volumes:
+      - ${HOME}/.config:/home/coder/.config
+      - data:/home/coder/project
+    networks:
+      - local
+    environment:
+      DOCKER_USER: ${USER}
+
+volumes:
+  data:
+
+networks:
+  local:
+    external: true

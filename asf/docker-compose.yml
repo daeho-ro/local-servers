@@ -5,9 +5,12 @@ services:
     restart: unless-stopped
     pull_policy: always
     volumes:
-      - ./config:/app/config
+      - config:/app/config
     networks:
       - local
+
+volumes:
+  config:
 
 networks:
   local:

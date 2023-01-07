@@ -1,0 +1,29 @@
+services:
+  shlink:
+    image: shlinkio/shlink:stable
+    container_name: shlink
+    restart: unless-stopped
+    volumes:
+      - data:/etc/shlink/data
+    networks:
+      - local
+    environment:
+      DEFAULT_DOMAIN: url.lamanus.kr
+      IS_HTTPS_ENABLED: true
+
+  shlink-web:
+    image: shlinkio/shlink-web-client
+    container_name: shlink-web
+    restart: unless-stopped
+    networks:
+      - local
+    environment:
+      SHLINK_SERVER_NAME: default
+      SHLINK_SERVER_URL: https://url.lamanus.kr
+
+volumes:
+  data:
+
+networks:
+  local:
+    external: true

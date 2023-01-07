@@ -5,9 +5,12 @@ services:
     restart: unless-stopped
     pull_policy: always
     volumes:
-      - ./data:/app/data
+      - data:/app/data
     networks:
       - local
+
+volumes:
+  data:
 
 networks:
   local:
